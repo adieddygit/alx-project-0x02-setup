@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { FC } from 'react';
+import Header from '@/components/layout/Header'
 
-const Home: FC = ()=>{
+const Greeting: FC = ()=>{
   return(
     <>
       <Head>
@@ -10,6 +11,7 @@ const Home: FC = ()=>{
       </Head>
 
       <main>
+        <Header/>
         <div className='flex items-center justify-center h-screen m-4'>
         <h1 className='text-4xl sm:text-4xl md:text-5xl font-extrabold'>Welcome, We are Glad to Have You </h1>
         </div>
@@ -18,4 +20,4 @@ const Home: FC = ()=>{
   )
 };
 
-export default Home;
+export default Greeting;
