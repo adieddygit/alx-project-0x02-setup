@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import {FC} from 'react';
+import Head from 'next/head';
+import { FC } from 'react';
 
 const Home: FC = ()=>{
   return(
@@ -16,6 +16,6 @@ const Home: FC = ()=>{
       </main>
     </>
   )
-}
+};
 
 export default Home;
