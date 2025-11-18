@@ -5,7 +5,7 @@ const Header: React.FC = ()=>{
         <div>
             <nav>
                 <ul>
-                    <li></li>
+                    <li>List</li>
                 </ul>
             </nav>
         </div>
