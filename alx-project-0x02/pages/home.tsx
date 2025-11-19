@@ -1,14 +1,25 @@
-import { FC} from 'react';
+import { FC } from 'react';
 import Card from '@/components/common/Card';
+import PostModal from '@/components/common/PostModal';
+import { PostData} from '@/interfaces';
+import {useState} from 'react'
 
 const Home: FC = ()=>{
+    const [isModalOpen, setModalOpen] = useState(false)
+
+    const [cards, setCards]= useState<PostData[]>([])
+
+    const handleAddCard = (newCard: PostData)=>{
+        setCards((prev) =>[...prev, newCard]);
+        setModalOpen(false)
+    }
     return (
         <div>
             <h1 className='flex items-center justify-center font-bold text-4xl shadow-md m-5 p-4'>This is the home page</h1>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-5 gap-6'>
+            {isModalOpen && (<PostModal onClose={()=> setModalOpen(false)} onSubmit={handleAddCard}/>)}
             <Card title='Beachfront Villa'
             content={
-                
                 <ul className='list-disc ml-5'>
                     <li>Stunning ocean views</li>
                     <li>Private outdoor pool</li>
@@ -34,16 +45,30 @@ const Home: FC = ()=>{
                     <li>24/7 security & water supply</li>
                 </ul>
             }/>
-            <Card title='Deluxe Apartment'
+            <Card title='Executive Suite'
             content={
                 <ul className='list-disc ml-5'>
-                    <li>Spacious 1–2 bedroom apartment</li>
-                    <li>Fully equipped kitchen</li>
-                    <li>Air-conditioned</li>
-                    <li>24/7 security & water supply</li>
+                    <li>Luxury suite with king-size bed</li>
+                    <li>Elegant interior + smart TV</li>
+                    <li>Complimentary breakfast</li>
+                    <li>High-speed Wi-Fi</li>
                 </ul>
             }/>
+                    {/* 🚀 Dynamic cards added by user */}
+                    {cards.map((card, index) => (
+                    <Card
+                        key={index} 
+                        title={card.title} 
+                        content={card.content} 
+                    />
+                ))}
+
+            
             </div>
+            {/* Add New Card */}
+                <button onClick={()=> setModalOpen(true)} className="px-6 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 m-5">
+                    Add New Card
+                </button>
         </div>
     )
 }

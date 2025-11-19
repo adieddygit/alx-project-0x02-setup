@@ -13,7 +13,7 @@ const Greeting: FC = ()=>{
       <main>
         <Header/>
         <div className='flex items-center justify-center h-screen m-4'>
-        <h1 className='text-4xl sm:text-4xl md:text-5xl font-extrabold'>Welcome, We are Glad to Have You </h1>
+        <h1 className='text-4xl sm:text-4xl md:text-5xl font-extrabold'>Welcome, We are Glad to Have You As a Guest</h1>
         </div>
       </main>
     </>
