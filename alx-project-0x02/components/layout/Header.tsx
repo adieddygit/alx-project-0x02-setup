@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({title})=>{
                         <Link title={title} href='/about'>About</Link>
                     </li>
                     <li>
-                        <Link title={title} href='/post'>Post</Link>
+                        <Link title={title} href='/posts'>Posts</Link>
                     </li>
                 </ul>
             </nav>
