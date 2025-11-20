@@ -27,6 +27,12 @@ export interface ButtonProps{
 export interface HeaderProps{
   title: string;
 }
+
+export interface PostProps {
+  title: string;
+  userId: number | string;
+  content: string;
+}
 //   subtitle?: string;
 //   description?: string;
 

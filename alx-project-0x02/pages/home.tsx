@@ -54,7 +54,7 @@ const Home: FC = ()=>{
                     <li>High-speed Wi-Fi</li>
                 </ul>
             }/>
-                    {/* 🚀 Dynamic cards added by user */}
+                    {/* Dynamic cards added by user */}
                     {cards.map((card, index) => (
                     <Card
                         key={index} 
