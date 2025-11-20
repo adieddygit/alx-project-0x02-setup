@@ -11,8 +11,8 @@ const Posts: NextPage<PostsPageProps> = ({ posts }) => {
   return (
     <div>
       <Header title="Post Page" />
-
-      {posts.map((post) => (
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+{posts.map((post) => (
         <PostCard
           key={post.title + post.userId}
           title={post.title}
@@ -20,6 +20,8 @@ const Posts: NextPage<PostsPageProps> = ({ posts }) => {
           userId={post.userId}
         />
       ))}
+</div>
+      
     </div>
   );
 };
