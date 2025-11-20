@@ -23,6 +23,10 @@ export interface ButtonProps{
    styles?: string;
    onClick?: ()=> void;
 }
+
+export interface HeaderProps{
+  title: string;
+}
 //   subtitle?: string;
 //   description?: string;
 

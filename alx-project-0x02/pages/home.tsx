@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import Header from '@/components/layout/Header';
 import Card from '@/components/common/Card';
 import PostModal from '@/components/common/PostModal';
 import { PostData} from '@/interfaces';
-import {useState} from 'react'
+import {useState, FC} from 'react'
 
 const Home: FC = ()=>{
     const [isModalOpen, setModalOpen] = useState(false)
@@ -15,7 +15,7 @@ const Home: FC = ()=>{
     }
     return (
         <div>
-            <h1 className='flex items-center justify-center font-bold text-4xl shadow-md m-5 p-4'>This is the home page</h1>
+            <Header title='Home Page'/>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-5 gap-6'>
             {isModalOpen && (<PostModal onClose={()=> setModalOpen(false)} onSubmit={handleAddCard}/>)}
             <Card title='Beachfront Villa'
