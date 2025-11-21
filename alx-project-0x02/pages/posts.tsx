@@ -12,7 +12,7 @@ const Posts: NextPage<PostsPageProps> = ({ posts }) => {
     <div>
       <Header title="Post Page" />
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-{posts.map((post) => (
+{posts.map((post: PostProps) => (
         <PostCard
           key={post.title + post.userId}
           title={post.title}
@@ -31,7 +31,7 @@ export async function getStaticProps() {
     (res) => res.json()
   );
 
-  const posts = data.slice(0, 10).map((post) => ({
+  const posts = data.slice(0, 10).map((post: PostProps ) => ({
     title: post.title,
     content: post.body,
     userId: post.userId,
